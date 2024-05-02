@@ -1,7 +1,7 @@
 name: Deploy Hugo site to Mirkus VPS
 on:
   push:
-    branches: [ main ]
+    branches: [ main , cicd]
   workflow_dispatch:
 
 concurrency:
@@ -34,8 +34,7 @@ jobs:
         run: |
           hugo \
             --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --minify
 
       - name: Upload /public folder as artifact
         uses: actions/upload-artifact@v2
