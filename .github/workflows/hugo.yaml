@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: public-folder-artifact
-          path: ./public
+          path: public/
 
   deploy:
     runs-on: ubuntu-latest
